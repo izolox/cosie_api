@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "routes": [
+        {
+            "src": "/creatures/(.*)",
+            "dest": "/api/creatures.ts"
+        }
+    ]
+}
