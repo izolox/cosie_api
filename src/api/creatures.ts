@@ -14,4 +14,11 @@ app.get("/creatures/:name", async (req: Request, res: Response) => {
         .catch((error) => res.status(500).json({ error: error.message }));
 });
 
+app.route("/creatures/:name").get(async (req: Request, res: Response) => {
+    const name = req.params.name;
+    Grabber.fetchSpecies(name)
+        .then((data) => res.json(data))
+        .catch((error) => res.status(500).json({ error: error.message }));
+});
+
 export default app;
